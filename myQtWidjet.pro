@@ -33,7 +33,8 @@ SOURCES += \
     globaldata.cpp \
     mywidget.cpp \
     readxml.cpp \
-    udptest.cpp
+    udptest.cpp \
+    flypanel.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -44,12 +45,14 @@ HEADERS += \
     globaldata.h \
     readxml.h \
     strinfomation.h \
-    udptest.h
+    udptest.h \
+    flypanel.h
 
 FORMS += \
         mainwindow.ui \
     mydialog.ui \
     mywidget.ui \
+    flypanel.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -49,3 +49,9 @@ void MainWindow::on_actionNew_Widget_triggered()
 
     widget->show();
 }
+
+void MainWindow::on_actionFly_Panel_triggered()
+{
+    flypanel = new FlyPanel;
+    flypanel->show();
+}

@@ -7,6 +7,7 @@
 #include <QDebug>
 
 #include "mywidget.h"
+#include "flypanel.h"
 
 namespace Ui {
 class MainWindow;
@@ -33,11 +34,14 @@ private slots:
 
     void on_actionNew_Widget_triggered();
 
+    void on_actionFly_Panel_triggered();
+
 private:
     Ui::MainWindow *ui;
 
     QDialog *dialog;
     myWidget *widget;
+    FlyPanel *flypanel;
 
 };
 

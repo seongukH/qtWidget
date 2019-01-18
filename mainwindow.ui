@@ -101,6 +101,7 @@
     <addaction name="separator"/>
     <addaction name="actionNew_Window_2"/>
     <addaction name="actionNew_Widget"/>
+    <addaction name="actionFly_Panel"/>
    </widget>
    <addaction name="menudisplay"/>
   </widget>
@@ -121,6 +122,11 @@
   <action name="actionNew_Widget">
    <property name="text">
     <string>New Widget</string>
+   </property>
+  </action>
+  <action name="actionFly_Panel">
+   <property name="text">
+    <string>Fly Panel</string>
    </property>
   </action>
  </widget>
