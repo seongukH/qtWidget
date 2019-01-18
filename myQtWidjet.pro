@@ -29,12 +29,13 @@ SOURCES += \
         mainwindow.cpp \
     mydialog.cpp \
     track.cpp \
-    dbmanager.cpp \
     globaldata.cpp \
     mywidget.cpp \
     readxml.cpp \
     udptest.cpp \
-    flypanel.cpp
+    flypanel.cpp \
+    dbmanager.cpp
+
 
 HEADERS += \
         mainwindow.h \
