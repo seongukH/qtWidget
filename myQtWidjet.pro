@@ -31,10 +31,10 @@ SOURCES += main.cpp \
     commonFunction/udptest.cpp \
     commonFunction/dbmanager.cpp \
     flyPanel/flypanel.cpp \
+    flyPanel/plain.cpp \
     mydialog.cpp \
     track.cpp \    
-    mywidget.cpp \
-    plain.cpp
+    mywidget.cpp
 
 
 HEADERS += mainwindow.h \
@@ -43,11 +43,11 @@ HEADERS += mainwindow.h \
     commonFunction/readxml.h \
     commonFunction/udptest.h \
     flyPanel/flypanel.h\
+    flyPanel/plain.h\
     mydialog.h \
     track.h \
     mywidget.h \
-    strinfomation.h \
-    plain.h
+    strinfomation.h
 
 FORMS += mainwindow.ui \
     flyPanel/flypanel.ui \

@@ -19,8 +19,9 @@ MyDialog::MyDialog(QWidget *parent) :
     QPen blackpen(Qt::black);
     scene->addRect(10,10,  30,30, blackpen);
     scene->addText("hello world");
-    scene->addItem(track);
 
+   // track->setPos(100,100);
+    scene->addItem(track);
 
 }
 

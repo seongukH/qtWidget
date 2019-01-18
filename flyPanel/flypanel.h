@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+#include "plain.h"
+
 namespace Ui {
 class FlyPanel;
 }
@@ -17,6 +19,9 @@ public:
 
 private:
     Ui::FlyPanel *ui;
+
+    QGraphicsScene *scene;
+    Plain *plain;
 };
 
 #endif // FLYPANEL_H
