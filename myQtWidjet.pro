@@ -24,36 +24,35 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 CONFIG += c++11
 
-SOURCES += \
-        main.cpp \
+SOURCES += main.cpp \
         mainwindow.cpp \
+    commonFunction/globaldata.cpp \
+    commonFunction/readxml.cpp \
+    commonFunction/udptest.cpp \
+    commonFunction/dbmanager.cpp \
+    flyPanel/flypanel.cpp \
     mydialog.cpp \
-    track.cpp \
-    globaldata.cpp \
+    track.cpp \    
     mywidget.cpp \
-    readxml.cpp \
-    udptest.cpp \
-    flypanel.cpp \
-    dbmanager.cpp
+    plain.cpp
 
 
-HEADERS += \
-        mainwindow.h \
+HEADERS += mainwindow.h \
+    commonFunction/dbmanager.h \
+    commonFunction/globaldata.h \
+    commonFunction/readxml.h \
+    commonFunction/udptest.h \
+    flyPanel/flypanel.h\
     mydialog.h \
     track.h \
     mywidget.h \
-    dbmanager.h \
-    globaldata.h \
-    readxml.h \
     strinfomation.h \
-    udptest.h \
-    flypanel.h
+    plain.h
 
-FORMS += \
-        mainwindow.ui \
+FORMS += mainwindow.ui \
+    flyPanel/flypanel.ui \
     mydialog.ui \
-    mywidget.ui \
-    flypanel.ui
+    mywidget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
