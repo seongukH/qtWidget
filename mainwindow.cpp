@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     udpRecvTimer = new QTimer();
     connect(udpRecvTimer, SIGNAL(timeout()), this, SLOT(recvUDP()));
+    udpRecvTimer->start();
 
 }
 
@@ -62,5 +63,5 @@ void MainWindow::on_actionFly_Panel_triggered()
 
 void MainWindow::recvUDP()
 {
-
+    udpTest->readUDP();
 }
