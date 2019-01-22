@@ -31,7 +31,11 @@ struct locationMessage{
     F32 loc_x;
     F32 loc_y;
     S32 rotation;
-    QString id;
+    U8 id;
+};
+
+struct StringAllInt{
+
 };
 
 struct NetMsgTrack

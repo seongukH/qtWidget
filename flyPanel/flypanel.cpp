@@ -21,7 +21,7 @@ FlyPanel::FlyPanel(QWidget *parent) :
 
    plain = new Plain;
     //Plain *plain;
-    locMessage = new locationMessage;
+    //locMessage = new locationMessage;
 
    scene->addRect(10,10, 30,30);
 
@@ -56,18 +56,31 @@ void FlyPanel::on_pushButton_2_clicked()
 {
     //qreal y = plain->y();
     //y = y-1;
-    locMessage->loc_y = plain->y();
-    locMessage->loc_y --;
+    locMessage.loc_y = plain->y();
+    locMessage.loc_y --;
 
-    plain->setY(locMessage->loc_y);
+    plain->setY(locMessage.loc_y);
 }
 
 void FlyPanel::sender()
 {
 
-    locMessage->id = ui->lineEdit->text();
+    //locMessage->id = ui->lineEdit->text();
 
-    char *p = (char*)&locMessage;
+    //char *p = (char*)&locMessage;
+
+    char *p = "123";
+
+    qDebug()<<"locmessage.id : "<< locMessage.id;
+    qDebug()<<"locmessage.x : "<<locMessage.loc_x;
+    qDebug()<<"locmessage.y : "<<locMessage.loc_y;
+    qDebug()<<"locmessage.header : "<<locMessage.header;
+
+   // QByteArray sendBuffer = static_cast<QByteArray>(locMessage);
+
+
+    //QByteArray byte = locMessage;
+
     qDebug()<<"sender slot : "<<&p;
 
     udpTest->sender(p);

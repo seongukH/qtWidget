@@ -45,7 +45,9 @@ private:
     UDPTest *udpTest;
     GlobalData *g_data = GlobalData::getInstance();
     QTimer *timer;
-    locationMessage *locMessage;
+    locationMessage locMessage;
+
+    QString strRaw;
 };
 
 #endif // FLYPANEL_H

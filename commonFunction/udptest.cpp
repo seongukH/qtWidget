@@ -46,6 +46,10 @@ void UDPTest::readUDP(){
     qDebug() <<"Message port: "<<m_port;
     qDebug() <<"readUDP : Message : "<<Buffer;
 
+
+
+    //locmessage = reinterpret_cast<locationMessage*>(Buffer);
+
     }
 }
 
@@ -59,7 +63,7 @@ void UDPTest::sender(QByteArray bytearray)
     socket->writeDatagram(bytearray,hostAddr, g_data->infoSystem.listenPort);
     //ipaddr : 127.0.0.1,  port : 42424
 
-    qDebug()<<"send bytearray : "+bytearray<<endl;
+    qDebug()<<"send bytearray : "+ *bytearray<<endl;
 }
 
 
