@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QDebug>
 #include <QTimer>
+#include <QJsonObject>
 
 
 #include "plain.h"

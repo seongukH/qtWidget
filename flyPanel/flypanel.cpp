@@ -69,7 +69,19 @@ void FlyPanel::sender()
 
     //char *p = (char*)&locMessage;
 
-    char *p = "123";
+    QJsonObject jsonObj;
+    //QJsonDocument doc();
+   // QString strJson(doc.)
+
+    jsonObj["loc_x"] = 1;
+    jsonObj["loc_y"] = 2;
+    jsonObj["id"] = "idisid";
+
+
+
+    char *p = jsonObj;
+
+
 
     qDebug()<<"locmessage.id : "<< locMessage.id;
     qDebug()<<"locmessage.x : "<<locMessage.loc_x;
