@@ -3,6 +3,7 @@
 
 UDPTest::UDPTest(QObject *parent) : QObject(parent)
 {
+    /*
     socket = new QUdpSocket(this);
     socket->bind(QHostAddress::LocalHost, g_data->infoSystem.listenPort) ;
     //connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
@@ -16,7 +17,27 @@ UDPTest::UDPTest(QObject *parent) : QObject(parent)
           QTimer *Sendtimer = new QTimer(this);
                 connect(Sendtimer, SIGNAL(timeout()), this, SLOT(sayHello()));
                 Sendtimer->start(1000);
+                */
 }
+
+void UDPTest::init(QString ipaddr, int port)
+{
+
+
+    //socket->bind(hostAddr, g_data->infoSystem.listenPort);
+}
+
+void UDPTest::sender(QByteArray bytearray)
+{
+    socket = new QUdpSocket(this);
+    QHostAddress hostAddr = QHostAddress(g_data->infoSystem.ip_addr);
+
+    //char *p = (char*)&bytearray;
+
+    socket->writeDatagram(bytearray,hostAddr, g_data->infoSystem.listenPort);
+    qDebug()<<"send bytearray : "+bytearray<<endl;
+}
+
 
 void UDPTest::sayHello()
 {
@@ -40,6 +61,8 @@ void UDPTest::sayHello()
     socket->writeDatagram(p,hostAddr, g_data->infoSystem.listenPort);
 
 }
+
+
 
 void UDPTest::readyRead()
 {

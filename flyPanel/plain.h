@@ -7,6 +7,7 @@
 #include <QRandomGenerator>
 #include <QStyleOption>
 #include <qmath.h>
+#include <QKeyEvent>
 
 class Plain : public QGraphicsItem
 {

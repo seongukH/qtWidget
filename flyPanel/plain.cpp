@@ -1,6 +1,8 @@
 #include "plain.h"
 
 
+
+
 const qreal Pi = M_PI;
 const qreal TwoPi = 2 * M_PI;
 
@@ -12,6 +14,8 @@ static qreal normalizeAngle(qreal angle)
         angle -= TwoPi;
     return angle;
 }
+
+
 
 Plain::Plain()
 {

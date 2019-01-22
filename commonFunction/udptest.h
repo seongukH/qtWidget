@@ -23,6 +23,9 @@ public slots:
     void readyRead();
     void sayHello();
 
+    void init(QString ipaddr, int port);
+    void sender(QByteArray bytearray);
+
 
 
 private:

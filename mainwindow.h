@@ -7,7 +7,7 @@
 #include <QDebug>
 
 #include "mywidget.h"
-#include "flypanel.h"
+#include "flyPanel/flypanel.h"
 
 namespace Ui {
 class MainWindow;
