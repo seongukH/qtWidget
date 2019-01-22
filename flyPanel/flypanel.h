@@ -32,9 +32,7 @@ private slots:
     void on_pushButton_2_clicked();
     void sender();
 
-    void on_FlyPanel_destroyed();
 
-    void on_FlyPanel_destroyed(QObject *arg1);
 
 public slots:
 
@@ -44,13 +42,15 @@ private:
 
     QGraphicsScene *scene;
     Plain *plain;
-
     UDPTest *udpTest;
-
     GlobalData *g_data = GlobalData::getInstance();
-
     QTimer *timer;
-
+    locationMessage *locMessage;
 };
 
 #endif // FLYPANEL_H
+
+
+
+
+

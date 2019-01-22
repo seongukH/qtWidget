@@ -25,12 +25,34 @@ struct InfoSystem{
     int listenPort;
 };
 
-struct locaionMessage{
+struct locationMessage{
     U8 header[4] = {0xAA, 0xBB, 0xCC, 0xDD};
-    U8 messageType;
+    U8 messageType = 0x00;
     F32 loc_x;
     F32 loc_y;
     S32 rotation;
+    QString id;
 };
+
+struct NetMsgTrack
+{
+    //NetMsgHeader msgHeader;
+
+    U16 unTrackNo;
+    U16 unTimeOfTrack;
+    U16 unSSRCode;
+    F64 dLatitude;
+    F64 dLongitude;
+    F64 pos_x;          //meter
+    F64 pos_y;          //meter
+    F64 dAzimuth;       //heading(0~360)is North zero?
+    F64 dSpeed;         //meter per second?
+    U16 unFlightLevel;  //meter & 1meter == 3.28084feet, 100feet == 1FL
+
+    char cFlightID[8];
+    U32 icaoAddress;
+};
+
+
 
 #endif // STRINFOMATION_H

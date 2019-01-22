@@ -5,9 +5,11 @@
 //#include <Spreadsheet>
 #include <QLabel>
 #include <QDebug>
+#include <QTimer>
 
 #include "mywidget.h"
 #include "flyPanel/flypanel.h"
+#include "commonFunction/udptest.h"
 
 namespace Ui {
 class MainWindow;
@@ -36,12 +38,17 @@ private slots:
 
     void on_actionFly_Panel_triggered();
 
+    void recvUDP();
+
 private:
     Ui::MainWindow *ui;
 
     QDialog *dialog;
     myWidget *widget;
     FlyPanel *flypanel;
+
+    QTimer *udpRecvTimer;
+    UDPTest *udpTest;
 
 };
 

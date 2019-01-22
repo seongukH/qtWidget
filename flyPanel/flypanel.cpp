@@ -15,15 +15,18 @@ FlyPanel::FlyPanel(QWidget *parent) :
 
     ui->graphicsView->setScene(scene);
 
+    ui->lineEdit->text();
+
     //QKeyEvent *keyEvent;
 
    plain = new Plain;
     //Plain *plain;
+    locMessage = new locationMessage;
 
    scene->addRect(10,10, 30,30);
 
 
-    plain->setPos(110,100);
+    //plain->setPos(netMsgTrack->pos_x,netMsgTrack->pos_y);
 
     //plain.setPos(10,10);
     scene->addItem(plain);
@@ -51,17 +54,24 @@ FlyPanel::~FlyPanel()
 
 void FlyPanel::on_pushButton_2_clicked()
 {
-    qreal y = plain->y();
-    y = y-1;
+    //qreal y = plain->y();
+    //y = y-1;
+    locMessage->loc_y = plain->y();
+    locMessage->loc_y --;
 
-    plain->setY(y);
+    plain->setY(locMessage->loc_y);
 }
 
 void FlyPanel::sender()
 {
-    qDebug()<<"sender slot : ok";
 
-    udpTest->sender("aaabbb");
+    locMessage->id = ui->lineEdit->text();
+
+    char *p = (char*)&locMessage;
+    qDebug()<<"sender slot : "<<&p;
+
+    udpTest->sender(p);
+
 }
 
 void FlyPanel::sendUDP()
@@ -83,16 +93,4 @@ void FlyPanel::closeEvent(QCloseEvent *event)
     qDebug()<<"timer stop4";
 }
 
-void FlyPanel::on_FlyPanel_destroyed()
-{
-    timer->stop();
-    qDebug()<<"timer stop1";
-}
 
-void FlyPanel::on_FlyPanel_destroyed(QObject *arg1)
-{
-    timer->stop();
-    qDebug()<<"timer stop2";
-
-
-}

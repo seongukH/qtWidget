@@ -22,9 +22,31 @@ UDPTest::UDPTest(QObject *parent) : QObject(parent)
 
 void UDPTest::init(QString ipaddr, int port)
 {
+    m_port = port;
+    m_ipaddr = ipaddr;
 
+    socket = new QUdpSocket(this);
+    socket->bind(QHostAddress(ipaddr), port) ;
 
     //socket->bind(hostAddr, g_data->infoSystem.listenPort);
+}
+
+void UDPTest::readUDP(){
+
+    QByteArray Buffer;
+    Buffer.resize(socket->pendingDatagramSize());
+
+    QHostAddress hostAddr = QHostAddress(m_ipaddr);
+
+    if(Buffer.length() != 0){
+    socket->readDatagram(Buffer.data(), Buffer.size(),
+                         &hostAddr, &m_port);
+
+    qDebug() <<"Message from: "<<hostAddr;
+    qDebug() <<"Message port: "<<m_port;
+    qDebug() <<"readUDP : Message : "<<Buffer;
+
+    }
 }
 
 void UDPTest::sender(QByteArray bytearray)
@@ -35,6 +57,8 @@ void UDPTest::sender(QByteArray bytearray)
     //char *p = (char*)&bytearray;
 
     socket->writeDatagram(bytearray,hostAddr, g_data->infoSystem.listenPort);
+    //ipaddr : 127.0.0.1,  port : 42424
+
     qDebug()<<"send bytearray : "+bytearray<<endl;
 }
 

@@ -9,7 +9,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    udpTest = new UDPTest;
+    udpTest->init("127.0.0.1", 42424);
 
+    udpRecvTimer = new QTimer();
+    connect(udpRecvTimer, SIGNAL(timeout()), this, SLOT(recvUDP()));
 
 }
 
@@ -54,4 +58,9 @@ void MainWindow::on_actionFly_Panel_triggered()
 {
     flypanel = new FlyPanel;
     flypanel->show();
+}
+
+void MainWindow::recvUDP()
+{
+
 }

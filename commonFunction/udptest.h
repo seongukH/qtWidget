@@ -16,6 +16,7 @@ public:
 
     explicit UDPTest(QObject *parent = nullptr);
 
+    void readUDP();
 
 signals:
 
@@ -32,7 +33,10 @@ private:
        QUdpSocket *socket;
        GlobalData *g_data = GlobalData::getInstance();
 
-       locaionMessage locmessage;
+       locationMessage locmessage;
+
+       QString m_ipaddr;
+       quint16 m_port;
 };
 
 #endif // UDPTEST_H
