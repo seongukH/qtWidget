@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QUdpSocket>
 #include <QTimer>
+#include <QJsonDocument>
+#include <QJsonObject>
 
 #include "globaldata.h"
 //#include "strinfomation.h"

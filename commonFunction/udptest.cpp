@@ -42,11 +42,20 @@ void UDPTest::readUDP(){
     socket->readDatagram(Buffer.data(), Buffer.size(),
                          &hostAddr, &m_port);
 
-    qDebug() <<"Message from: "<<hostAddr;
-    qDebug() <<"Message port: "<<m_port;
-    qDebug() <<"readUDP : Message : "<<Buffer;
+    //qDebug() <<"Message from: "<<hostAddr;
+    //qDebug() <<"Message port: "<<m_port;
+
+    QJsonDocument itemDoc = QJsonDocument::fromBinaryData(Buffer);
+    QJsonObject recvObject = itemDoc.object();
+
+    //qDebug()<<recvObject;
+
+    qDebug() <<"readUDP : Message : "<<recvObject;
 
 
+    int temp1 = recvObject["loc_x"].toInt();
+
+    qDebug()<<"recv item : "<<temp1<<endl;
 
     //locmessage = reinterpret_cast<locationMessage*>(Buffer);
 
@@ -63,7 +72,10 @@ void UDPTest::sender(QByteArray bytearray)
     socket->writeDatagram(bytearray,hostAddr, g_data->infoSystem.listenPort);
     //ipaddr : 127.0.0.1,  port : 42424
 
-    qDebug()<<"send bytearray : "+ *bytearray<<endl;
+
+
+
+
 }
 
 

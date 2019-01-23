@@ -5,6 +5,8 @@
 #include <QDebug>
 #include <QTimer>
 #include <QJsonObject>
+#include <QJsonDocument>
+#include <QJsonArray>
 
 
 #include "plain.h"

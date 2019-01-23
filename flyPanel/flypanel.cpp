@@ -70,32 +70,32 @@ void FlyPanel::sender()
     //char *p = (char*)&locMessage;
 
     QJsonObject jsonObj;
-    //QJsonDocument doc();
-   // QString strJson(doc.)
-
     jsonObj["loc_x"] = 1;
     jsonObj["loc_y"] = 2;
     jsonObj["id"] = "idisid";
 
+    QJsonDocument doc(jsonObj);
+
+    // QString strJson(doc.)
+
+    //char *p = jsonObj;
 
 
-    char *p = jsonObj;
 
-
-
-    qDebug()<<"locmessage.id : "<< locMessage.id;
-    qDebug()<<"locmessage.x : "<<locMessage.loc_x;
-    qDebug()<<"locmessage.y : "<<locMessage.loc_y;
-    qDebug()<<"locmessage.header : "<<locMessage.header;
+   // qDebug()<<"locmessage.id : "<< jsonObj["loc_x"];
+    //qDebug()<<"locmessage.x : "<<jsonObj["loc_y"];
+   // qDebug()<<"locmessage.y : "<<jsonObj["id"];
+   // qDebug()<<"locmessage.header : "<<locMessage.header;
 
    // QByteArray sendBuffer = static_cast<QByteArray>(locMessage);
 
 
     //QByteArray byte = locMessage;
 
-    qDebug()<<"sender slot : "<<&p;
+    //qDebug()<<"sender slot : "<<doc.object();
 
-    udpTest->sender(p);
+    udpTest->sender(doc.toBinaryData());
+    //udpTest->sender("");
 
 }
 

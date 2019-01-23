@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     udpRecvTimer = new QTimer();
     connect(udpRecvTimer, SIGNAL(timeout()), this, SLOT(recvUDP()));
-    udpRecvTimer->start();
+    udpRecvTimer->start(100);
 
 }
 
