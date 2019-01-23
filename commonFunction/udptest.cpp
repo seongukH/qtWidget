@@ -50,16 +50,16 @@ QJsonObject UDPTest::readUDP(){
 
     //qDebug()<<recvObject;
 
-    qDebug() <<"readUDP : Message : "<<recvObject;
+    //qDebug() <<"readUDP : Message : "<<recvObject;
 
 
     int temp1 = recvObject["loc_x"].toInt();
 
-    qDebug()<<"recv item : "<<temp1<<endl;
+    //qDebug()<<"recv item : "<<temp1<<endl;
 
     g_data->recvNetwork.append(recvObject);
 
-    qDebug()<<"recvNetworkArraySize : " <<g_data->recvNetwork.size();
+    //qDebug()<<"recvNetworkArraySize : " <<g_data->recvNetwork.size();
 
     //locmessage = reinterpret_cast<locationMessage*>(Buffer);
 

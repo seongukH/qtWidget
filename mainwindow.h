@@ -48,6 +48,8 @@ private slots:
 
     void drawPlain();
 
+    void clearScene();
+
 private:
     Ui::MainWindow *ui;
 
@@ -57,6 +59,7 @@ private:
 
     QTimer *udpRecvTimer;
     QTimer *drawPlainTimer;
+    QTimer *clearTimer;
 
     UDPTest *udpTest;
 

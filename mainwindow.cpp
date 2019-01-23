@@ -37,6 +37,10 @@ MainWindow::MainWindow(QWidget *parent) :
     connect( drawPlainTimer, SIGNAL(timeout()), this, SLOT(drawPlain()));
     drawPlainTimer->start(1000);
 
+    clearTimer = new QTimer;
+    connect( clearTimer, SIGNAL(timeout()), this, SLOT(clearScene()));
+    clearTimer->start(1000);
+
 
 }
 
@@ -89,16 +93,41 @@ void MainWindow::recvUDP()
 
 void MainWindow::drawPlain()
 {
-    scene->clear();
+    //scene->clear();
+    QJsonArray bufferArray;
 
-    for(int i=0; i<g_data->recvNetwork.size(); i++){
+    bufferArray = g_data->recvNetwork;
+
+    for(int i=0; i<g_data->recvNetwork.size(); i++){    //remove g_data array
+        g_data->recvNetwork.removeAt(0);
+    }
+
+    for(int i=0; i<bufferArray.size(); i++){
+
+        scene->addRect(-5,-5, 10,10);
+
+        qDebug()<<"recvNetworkArray : "<<bufferArray;
 
         plain = new Plain;
-        plain->setPos(10,30*i);
+
+        plain->setPos(bufferArray.first()["loc_x"].toDouble(), bufferArray.first()["loc_y"].toDouble());
         plain->setRotation(i);
         scene->addItem(plain);
 
+        bufferArray.removeFirst();
+
+
+        //qDebug()<<g_data->recvNetwork;
+
     }
 
+    //shoud be inside if
 
+
+
+}
+
+void MainWindow::clearScene()
+{
+    scene->clear();
 }
