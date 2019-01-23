@@ -8,6 +8,9 @@
 #include <QList>
 #include <QDebug>
 
+#include <QJsonArray>
+#include <QJsonObject>
+
 class GlobalData
 {
 public:
@@ -24,6 +27,8 @@ public:
     QMap<int, QString> testData;
 
     InfoSystem infoSystem;
+
+    QJsonArray recvNetwork;
 
 };
 

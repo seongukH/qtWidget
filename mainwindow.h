@@ -15,6 +15,7 @@
 #include "flyPanel/plain.h"
 
 #include "commonFunction/udptest.h"
+#include "commonFunction/globaldata.h"
 
 namespace Ui {
 class MainWindow;
@@ -64,6 +65,8 @@ private:
     Plain *plain;
 
     QJsonArray jsonArray;
+
+    GlobalData *g_data = GlobalData::getInstance();
 };
 
 #endif // MAINWINDOW_H

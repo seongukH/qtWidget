@@ -57,6 +57,10 @@ QJsonObject UDPTest::readUDP(){
 
     qDebug()<<"recv item : "<<temp1<<endl;
 
+    g_data->recvNetwork.append(recvObject);
+
+    qDebug()<<"recvNetworkArraySize : " <<g_data->recvNetwork.size();
+
     //locmessage = reinterpret_cast<locationMessage*>(Buffer);
 
     return recvObject;

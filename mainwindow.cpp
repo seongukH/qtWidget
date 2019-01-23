@@ -91,7 +91,7 @@ void MainWindow::drawPlain()
 {
     scene->clear();
 
-    for(int i=0; i<jsonArray.size(); i++){
+    for(int i=0; i<g_data->recvNetwork.size(); i++){
 
         plain = new Plain;
         plain->setPos(10,30*i);
