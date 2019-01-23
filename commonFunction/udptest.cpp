@@ -31,7 +31,7 @@ void UDPTest::init(QString ipaddr, int port)
     //socket->bind(hostAddr, g_data->infoSystem.listenPort);
 }
 
-void UDPTest::readUDP(){
+QJsonObject UDPTest::readUDP(){
 
     QByteArray Buffer;
     Buffer.resize(socket->pendingDatagramSize());
@@ -58,6 +58,8 @@ void UDPTest::readUDP(){
     qDebug()<<"recv item : "<<temp1<<endl;
 
     //locmessage = reinterpret_cast<locationMessage*>(Buffer);
+
+    return recvObject;
 
     }
 }

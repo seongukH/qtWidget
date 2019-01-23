@@ -18,7 +18,7 @@ public:
 
     explicit UDPTest(QObject *parent = nullptr);
 
-    void readUDP();
+    QJsonObject readUDP();
 
 signals:
 

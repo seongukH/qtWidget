@@ -56,10 +56,10 @@ void FlyPanel::on_pushButton_2_clicked()
 {
     //qreal y = plain->y();
     //y = y-1;
-    locMessage.loc_y = plain->y();
-    locMessage.loc_y --;
+    loc_y = plain->y();
+    loc_y --;
 
-    plain->setY(locMessage.loc_y);
+    plain->setY(loc_y);
 }
 
 void FlyPanel::sender()
@@ -70,9 +70,9 @@ void FlyPanel::sender()
     //char *p = (char*)&locMessage;
 
     QJsonObject jsonObj;
-    jsonObj["loc_x"] = 1;
-    jsonObj["loc_y"] = 2;
-    jsonObj["id"] = "idisid";
+    jsonObj["loc_x"] = loc_x;
+    jsonObj["loc_y"] = loc_y;
+    jsonObj["id"] = id;
 
     QJsonDocument doc(jsonObj);
 

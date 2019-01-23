@@ -6,9 +6,14 @@
 #include <QLabel>
 #include <QDebug>
 #include <QTimer>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
 
 #include "mywidget.h"
 #include "flyPanel/flypanel.h"
+#include "flyPanel/plain.h"
+
 #include "commonFunction/udptest.h"
 
 namespace Ui {
@@ -40,6 +45,8 @@ private slots:
 
     void recvUDP();
 
+    void drawPlain();
+
 private:
     Ui::MainWindow *ui;
 
@@ -48,8 +55,15 @@ private:
     FlyPanel *flypanel;
 
     QTimer *udpRecvTimer;
+    QTimer *drawPlainTimer;
+
     UDPTest *udpTest;
 
+    QGraphicsScene *scene;
+
+    Plain *plain;
+
+    QJsonArray jsonArray;
 };
 
 #endif // MAINWINDOW_H

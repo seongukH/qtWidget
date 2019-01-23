@@ -50,7 +50,12 @@ private:
     QTimer *timer;
     locationMessage locMessage;
 
-    QString strRaw;
+    QString id = "unknown";
+
+    double loc_x = 0;
+    double loc_y = 0;
+
+
 };
 
 #endif // FLYPANEL_H
